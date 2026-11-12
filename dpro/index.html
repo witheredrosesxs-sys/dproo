@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>D.Pro — студия детейлинга в Иркутске (демо-концепция)</title>
+<meta name="description" content="Концепция сайта детейлинг-студии D.Pro, Иркутск: химчистка, полировка, оклейка плёнкой, керамика, антихром, ремонт фар.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;500&family=Onest:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0e0f11;--bg2:#17191c;--line:#2a2d31;--steel:#8b9199;--text:#e9edf0;--ice:#cfe6f2;--r:4px;
+--d:'Unbounded','Arial Black',sans-serif;--b:'Onest','Segoe UI',Arial,sans-serif;color-scheme:dark;
+padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);box-sizing:border-box}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{background:var(--bg);color:var(--text);font:400 17px/1.6 var(--b)}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--ice);outline-offset:3px}
+.w{width:min(1180px,100% - 40px);margin:auto}
+section{padding:110px 0}
+h1,h2,h3{font-family:var(--d);font-weight:300;line-height:1.1;letter-spacing:-.02em}
+h2{font-size:clamp(28px,4.4vw,54px);margin-bottom:20px;max-width:16em}
+.lead{color:var(--steel);max-width:34em}
+.btn{display:inline-block;padding:15px 28px;border:1px solid var(--ice);background:var(--ice);color:#0b0c0d;font:500 16px var(--b);text-decoration:none;cursor:pointer;border-radius:var(--r);transition:background .25s,color .25s}
+.btn:hover{background:transparent;color:var(--ice)}
+.btn.ghost{background:transparent;color:var(--text);border-color:var(--steel)}
+.btn.ghost:hover{border-color:var(--ice);color:var(--ice)}
+/* nav */
+header{position:fixed;inset:0 0 auto;z-index:20;padding-top:env(safe-area-inset-top,0px);background:rgba(14,15,17,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+header .w{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font:500 20px var(--d);text-decoration:none;letter-spacing:-.03em}
+nav{display:flex;gap:26px;align-items:center}
+nav a{text-decoration:none;color:var(--steel);font-size:15px;transition:color .2s}
+nav a:hover{color:var(--text)}
+.burger{display:none;background:none;border:1px solid var(--line);color:var(--text);padding:8px 14px;border-radius:var(--r);font:inherit;cursor:pointer}
+/* hero */
+.hero{min-height:100svh;padding:120px 0 70px;display:flex;align-items:center}
+.hero .w{display:grid;grid-template-columns:1fr 1.15fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(34px,5.4vw,70px);margin:18px 0 24px}
+.hero .acts{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+.tag{color:var(--steel);font-size:15px}
+.stage{position:relative;aspect-ratio:4/3;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:linear-gradient(160deg,#202327,#0b0c0d 70%);--x:50%;--y:40%}
+.stage::before{content:"";position:absolute;inset:0;background:radial-gradient(520px circle at var(--x) var(--y),rgba(207,230,242,.28),transparent 60%);transition:background .1s}
+.stage::after{content:"";position:absolute;left:-10%;right:-10%;bottom:22%;height:1px;background:linear-gradient(90deg,transparent,var(--steel),transparent)}
+.stage figcaption,.ph span{position:absolute;left:18px;bottom:16px;right:18px;color:var(--steel);font-size:13px;line-height:1.4}
+.hero-in{animation:rise 1s cubic-bezier(.2,.7,.2,1) both}
+.hero-in.s2{animation-delay:.18s}
+@keyframes rise{from{opacity:0;transform:translateY(26px)}}
+/* services */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:48px}
+.card{background:var(--bg);padding:0;display:flex;flex-direction:column;transition:background .3s}
+.card:hover{background:var(--bg2)}
+.card .ph{aspect-ratio:16/10;border-bottom:1px solid var(--line)}
+.card div.t{padding:24px 26px 30px}
+.card h3{font-size:21px;margin-bottom:10px}
+.card p{color:var(--steel);font-size:15px}
+.ph{position:relative;background:repeating-linear-gradient(135deg,#17191c 0 14px,#1b1e22 14px 28px)}
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-top:44px}
+.gal button{all:unset;cursor:zoom-in;position:relative;aspect-ratio:1;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:repeating-linear-gradient(135deg,#17191c 0 14px,#1b1e22 14px 28px);transition:border-color .25s}
+.gal button:nth-child(1),.gal button:nth-child(4){grid-column:span 3;aspect-ratio:3/2}
+.gal button:nth-child(2),.gal button:nth-child(3),.gal button:nth-child(5),.gal button:nth-child(6){grid-column:span 3}
+.gal button:hover{border-color:var(--ice)}
+.gal img{width:100%;height:100%;object-fit:cover}
+.note{color:var(--steel);font-size:14px;margin-top:18px}
+.lb{position:fixed;inset:0;z-index:50;background:rgba(5,6,7,.94);display:none;align-items:center;justify-content:center;padding:24px}
+.lb.on{display:flex}
+.lb .box{width:min(1000px,100%);aspect-ratio:3/2;border:1px solid var(--line);background:repeating-linear-gradient(135deg,#17191c 0 14px,#1b1e22 14px 28px);display:grid;place-items:center;color:var(--steel);text-align:center;padding:20px;position:relative}
+.lb img{max-width:100%;max-height:80vh}
+.lb .x,.lb .nv{position:absolute;background:none;border:1px solid var(--line);color:var(--text);width:46px;height:46px;border-radius:50%;cursor:pointer;font-size:20px}
+.lb .x{top:20px;right:20px}.lb .pv{left:20px}.lb .nx{right:20px}
+.lb .nv{top:50%}
+/* about/prices/reviews */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.facts{border-top:1px solid var(--line)}
+.facts div{display:flex;justify-content:space-between;gap:20px;padding:18px 0;border-bottom:1px solid var(--line)}
+.facts span{color:var(--steel)}
+.facts b{font-weight:500;text-align:right}
+.big{font:300 clamp(64px,9vw,120px)/1 var(--d);color:var(--ice)}
+.panel{border:1px solid var(--line);padding:34px;border-radius:var(--r);background:var(--bg2)}
+/* form */
+form{display:grid;gap:16px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+label{display:grid;gap:7px;font-size:14px;color:var(--steel)}
+input,select,textarea{font:inherit;color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:var(--r);padding:13px 14px;width:100%}
+input:focus,select:focus,textarea:focus{border-color:var(--ice);outline:none}
+textarea{min-height:100px;resize:vertical}
+.hp{position:absolute;left:-9999px}
+#status{font-size:15px;color:var(--ice);min-height:1.4em}
+#status a{color:var(--ice)}
+/* map */
+.map{aspect-ratio:16/10;border:1px solid var(--line);border-radius:var(--r);display:grid;place-items:center;text-align:center;padding:20px;color:var(--steel);background:
+linear-gradient(var(--line) 1px,transparent 1px) 0 0/48px 48px,linear-gradient(90deg,var(--line) 1px,transparent 1px) 0 0/48px 48px,var(--bg2)}
+.map b{display:block;color:var(--text);font-weight:500;margin-bottom:6px}
+footer{border-top:1px solid var(--line);padding:34px 0;color:var(--steel);font-size:14px}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .8s,transform .8s}
+.rv.in{opacity:1;transform:none}
+@media(max-width:900px){
+section{padding:76px 0}
+.hero .w,.two{grid-template-columns:1fr;gap:36px}
+.grid{grid-template-columns:1fr 1fr}
+.gal{grid-template-columns:1fr 1fr}.gal button,.gal button:nth-child(n){grid-column:auto;aspect-ratio:1}
+.gal button:nth-child(1){grid-column:span 2;aspect-ratio:3/2}
+.burger{display:block}
+nav{position:absolute;top:calc(64px + env(safe-area-inset-top,0px));left:0;right:0;background:var(--bg);flex-direction:column;align-items:flex-start;padding:20px;gap:18px;border-bottom:1px solid var(--line);display:none}
+nav.on{display:flex}
+}
+@media(max-width:560px){.grid,.row{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero-in{animation:none}.rv{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+<header><div class="w">
+<a class="logo" href="#top">D.Pro</a>
+<button class="burger" aria-expanded="false" aria-controls="nav">Меню</button>
+<nav id="nav">
+<a href="#services">Услуги</a><a href="#works">Работы</a><a href="#about">О студии</a><a href="#prices">Цены</a><a href="#reviews">Отзывы</a><a href="#contacts">Контакты</a>
+<a class="btn" href="#book" style="padding:9px 18px;font-size:14px;color:#0b0c0d">Записаться</a>
+</nav></div></header>
+
+<main id="top">
+<section class="hero"><div class="w">
+<div>
+<p class="tag hero-in">Детейлинг · Иркутск · Левый берег Каи</p>
+<h1 class="hero-in s2">Автомобиль, к которому возвращаешься с удовольствием</h1>
+<p class="lead hero-in s2">D.Pro — студия детейлинга: химчистка, полировка, оклейка плёнкой, керамика, антихром и ремонт фар.</p>
+<div class="acts hero-in s2"><a class="btn" href="#book">Записаться</a><a class="btn ghost" href="#works">Смотреть работы</a></div>
+</div>
+<figure class="stage hero-in s2" id="stage"><figcaption>Здесь будет главное фото автомобиля из студии. Файл: <code>img/hero.jpg</code></figcaption></figure>
+</div></section>
+
+<section id="services"><div class="w rv">
+<h2>Услуги студии</h2>
+<p class="lead">Перечень взят из карточки D.Pro в 2ГИС. Состав работ, сроки и стоимость зависят от автомобиля — их согласуют при записи.</p>
+<div class="grid" id="svc"></div>
+</div></section>
+
+<section id="works"><div class="w rv">
+<h2>Наши работы</h2>
+<p class="lead">Галерея под реальные фотографии студии. В карточке 2ГИС опубликовано 42 фото — их можно использовать с согласия владельца.</p>
+<div class="gal" id="gal"></div>
+<p class="note">Чтобы подставить фото: впишите путь в массив <code>GALLERY</code> в конце файла.</p>
+</div></section>
+
+<section id="about"><div class="w two rv">
+<div><h2>О студии</h2>
+<p class="lead">D.Pro — детейлинг-студия в Иркутске, в микрорайоне Мельниково (Свердловский район). Принимает ежедневно, без выходных.</p>
+<p class="lead" style="margin-top:14px">Подробности о команде, опыте и используемых материалах не опубликованы в карточке, поэтому здесь они не указаны. Блок можно дополнить после разговора с владельцем.</p></div>
+<div class="facts">
+<div><span>Адрес</span><b>Левый берег Каи, 94д/1</b></div>
+<div><span>Район</span><b>Мельниково, Свердловский</b></div>
+<div><span>График</span><b>Ежедневно, 10:00–21:00</b></div>
+<div><span>Оценка в 2ГИС</span><b>5 · 108 оценок</b></div>
+</div></div></section>
+
+<section id="prices"><div class="w rv">
+<div class="panel two" style="align-items:center">
+<div><h2 style="font-size:clamp(26px,3.6vw,44px)">Стоимость зависит от автомобиля</h2>
+<p class="lead">Подтверждённого прайс-листа в доступных данных нет, поэтому цены не указаны. Оставьте заявку — студия назовёт цену под ваш автомобиль.</p></div>
+<div style="display:flex;gap:14px;flex-wrap:wrap"><button class="btn" id="askPrice">Уточнить стоимость</button>
+<a class="btn ghost" target="_blank" rel="noopener" href="https://2gis.ru/irkutsk/firm/70000001107266052/tab/prices">Цены в 2ГИС</a></div>
+</div></div></section>
+
+<section id="reviews"><div class="w two rv">
+<div><div class="big">5</div><p class="lead">Оценка по данным 2ГИС: 108 оценок, 49 отзывов.</p></div>
+<div><h2 style="font-size:clamp(24px,3.2vw,40px)">Отзывы клиентов</h2>
+<p class="lead">Тексты отзывов здесь не воспроизводятся, чтобы не искажать их. Читайте их на странице студии в 2ГИС.</p>
+<a class="btn ghost" style="margin-top:22px" target="_blank" rel="noopener" href="https://2gis.ru/irkutsk/firm/70000001107266052/tab/reviews">Читать отзывы</a></div>
+</div></section>
+
+<section id="book"><div class="w two rv">
+<div><h2>Запись</h2><p class="lead">Заполните форму — мы подготовим сообщение для студии. Приём заявок на сайте пока не подключён: отправить можно в WhatsApp.</p></div>
+<form id="f" novalidate>
+<input class="hp" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
+<div class="row"><label>Имя<input name="name" required autocomplete="name"></label>
+<label>Телефон<input name="phone" type="tel" required autocomplete="tel" placeholder="+7"></label></div>
+<div class="row"><label>Услуга<select name="service" id="selSvc"></select></label>
+<label>Марка автомобиля<input name="car" autocomplete="off"></label></div>
+<label>Комментарий<textarea name="comment"></textarea></label>
+<button class="btn" type="submit">Отправить заявку</button>
+<p id="status" role="status" aria-live="polite"></p>
+</form></div></section>
+
+<section id="contacts"><div class="w two rv">
+<div><h2>Контакты</h2>
+<div class="facts">
+<div><span>Адрес</span><b>Иркутск, Левый берег Каи, 94д/1<br>мкр. Мельниково, 664043</b></div>
+<div><span>Телефон</span><b><a href="tel:+79500648545">+7 950 064-85-45</a></b></div>
+<div><span>График</span><b>Ежедневно, 10:00–21:00</b></div>
+<div><span>Мессенджеры</span><b><a target="_blank" rel="noopener" href="https://wa.me/79642799852">WhatsApp</a> · <a target="_blank" rel="noopener" href="https://t.me/+79642799852">Telegram</a></b></div>
+</div>
+<a class="btn" style="margin-top:28px" target="_blank" rel="noopener" href="https://2gis.ru/irkutsk/firm/70000001107266052">Открыть в 2ГИС</a></div>
+<div class="map"><div><b>Карта</b>Заглушка. Координаты: 52.266571, 104.235587.<br>Интерактивную карту можно подключить по желанию владельца.<br><br><a href="https://2gis.ru/irkutsk/directions/points/%7C104.235587%2C52.266571%3B70000001107266052" target="_blank" rel="noopener">Построить маршрут в 2ГИС</a></div></div>
+</div></section>
+</main>
+
+<footer><div class="w">Демонстрационная концепция сайта. Данные о компании взяты из публичной карточки D.Pro в 2ГИС; сайт не является официальным ресурсом студии.</div></footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Просмотр фотографии">
+<button class="x" aria-label="Закрыть">✕</button><button class="nv pv" aria-label="Предыдущее">‹</button><button class="nv nx" aria-label="Следующее">›</button>
+<div class="box" id="lbBox"></div></div>
+
+<script>
+const SERVICES=[
+['Химчистка','Чистка салона автомобиля: сидений, ковров, потолка и пластика.'],
+['Полировка','Работа с лакокрасочным покрытием кузова для восстановления блеска.'],
+['Оклейка плёнкой','Оклейка кузова или его зон плёнкой.'],
+['Керамика','Защитное керамическое покрытие для кузова.'],
+['Антихром','Изменение цвета хромированных деталей кузова.'],
+['Ремонт фар','Восстановление внешнего вида и состояния фар.']];
+/* Вставьте реальные фото: {src:'img/work-1.jpg',alt:'Описание'} */
+const GALLERY=[null,null,null,null,null,null].map((_,i)=>({src:null,alt:'Фото работы №'+(i+1)}));
+/* Подключение приёма заявок: укажите адрес обработчика (например, функция Netlify или сервис форм). */
+const ENDPOINT='';
+const WA='79642799852';
+const $=s=>document.querySelector(s);
+
+$('#svc').innerHTML=SERVICES.map(s=>`<article class="card"><div class="ph"><span>Фото услуги: ${s[0].toLowerCase()}</span></div><div class="t"><h3>${s[0]}</h3><p>${s[1]}</p></div></article>`).join('');
+$('#selSvc').innerHTML='<option value="">Выберите услугу</option>'+SERVICES.map(s=>`<option>${s[0]}</option>`).join('')+'<option>Другое / не знаю</option>';
+
+const gal=$('#gal'),lb=$('#lb'),box=$('#lbBox');let cur=0;
+gal.innerHTML=GALLERY.map((g,i)=>g.src?`<button data-i="${i}"><img loading="lazy" src="${g.src}" alt="${g.alt}"></button>`:`<button data-i="${i}" aria-label="${g.alt}"><span class="ph" style="position:absolute;inset:0;background:none"><span>Место под фото</span></span></button>`).join('');
+function show(i){cur=(i+GALLERY.length)%GALLERY.length;const g=GALLERY[cur];box.innerHTML=g.src?`<img src="${g.src}" alt="${g.alt}">`:`<div>${g.alt}<br>Здесь откроется фото в полном размере.</div>`;}
+gal.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;show(+b.dataset.i);lb.classList.add('on');$('.x').focus();});
+lb.addEventListener('click',e=>{if(e.target===lb||e.target.classList.contains('x'))lb.classList.remove('on');});
+$('.pv').onclick=()=>show(cur-1);$('.nx').onclick=()=>show(cur+1);
+addEventListener('keydown',e=>{if(!lb.classList.contains('on'))return;if(e.key==='Escape')lb.classList.remove('on');if(e.key==='ArrowLeft')show(cur-1);if(e.key==='ArrowRight')show(cur+1);});
+
+const nav=$('#nav'),bg=$('.burger');
+bg.onclick=()=>{const o=nav.classList.toggle('on');bg.setAttribute('aria-expanded',o);};
+nav.addEventListener('click',e=>{if(e.target.tagName==='A'){nav.classList.remove('on');bg.setAttribute('aria-expanded',false);}});
+
+const st=$('#stage');
+st.addEventListener('pointermove',e=>{const r=st.getBoundingClientRect();st.style.setProperty('--x',(e.clientX-r.left)/r.width*100+'%');st.style.setProperty('--y',(e.clientY-r.top)/r.height*100+'%');});
+
+$('#askPrice').onclick=()=>{$('[name=comment]').value='Прошу уточнить стоимость.';location.hash='#book';$('[name=name]').focus({preventScroll:true});};
+
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(n=>io.observe(n));
+
+const f=$('#f'),out=$('#status');
+f.addEventListener('submit',async e=>{
+ e.preventDefault();const d=Object.fromEntries(new FormData(f));
+ if(d.company)return;
+ if(!d.name.trim()||d.phone.replace(/\D/g,'').length<10){out.textContent='Укажите имя и телефон (не менее 10 цифр).';return;}
+ if(ENDPOINT){
+  try{const r=await fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)});
+   if(!r.ok)throw 0;out.textContent='Заявка отправлена.';f.reset();}
+  catch{out.textContent='Не удалось отправить заявку. Позвоните: +7 950 064-85-45.';}
+  return;}
+ const t=`Здравствуйте! Хочу записаться в D.Pro.\nИмя: ${d.name}\nТелефон: ${d.phone}\nУслуга: ${d.service||'—'}\nАвтомобиль: ${d.car||'—'}\nКомментарий: ${d.comment||'—'}`;
+ out.innerHTML=`Заявка пока не отправлена: на сайте не подключён приём. <a target="_blank" rel="noopener" href="https://wa.me/${WA}?text=${encodeURIComponent(t)}">Отправить в WhatsApp</a>`;
+});
+</script>
+</body>
+</html>
